@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime Wallpapers - Arash Mahajan</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="hero">
+        <div class="navbar">
+            <img src="images/logo.png" class="logo">
+            <div class="user">
+                <button type="button">Explore</button>
+                <img src="images/user.png">
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="info">
+                <h1>DISCOVER</h1>
+                <P>Anime Wallpapers At Your Every Click . Gotta Discover'em All</P>
+                <input type="text" placeholder="Search">
+            </div>
+        </div>
+
+        <div class="slider">
+            <img src="images/left-arrow.png" id="prev">
+            <div class="preview">
+                <img src="images/img1.jpg" class="active thumbnail">
+                <img src="images/img2.jpg" class="thumbnail">
+                <img src="images/img3.jpg" class="thumbnail">
+                <img src="images/img4.jpeg" class="thumbnail">
+                <img src="images/img5.png" class="thumbnail">
+                <img src="images/img6.jpeg" class="thumbnail">
+                <img src="images/img7.jpeg" class="thumbnail">
+                <img src="images/img8.jpg" class="thumbnail">
+
+            </div>
+            <img src="images/right-arrow.png" id="next">
+        </div>
+
+    </div>
+
+    <script>
+        var prev = document.getElementById("prev");
+        var next = document.getElementById("next");
+        var thumbnail = document.getElementsByClassName("thumbnail");
+        var hero = document.getElementById("hero");
+
+        var backgroundImg = new Array(
+            "images/img1.jpg",
+            "images/img2.jpg",
+            "images/img3.jpg",
+            "images/img4.jpeg",
+            "images/img5.png",
+            "images/img6.jpeg",
+            "images/img7.jpeg",
+            "images/img8.jpg",
+
+            );
+            let i = 0;
+            next.onclick = function(){
+                if(i<7){
+                hero.style.backgroundImage = 'url("'+backgroundImg[i+1]+'")';
+                thumbnail[i+1].classList.add("active");
+                thumbnail[i].classList.remove("active");
+                i++;
+                }
+            }
+            
+            prev.onclick = function(){
+                if(i>0){
+                hero.style.backgroundImage = 'url("'+backgroundImg[i-1]+'")';
+                thumbnail[i-1].classList.add("active");
+                thumbnail[i].classList.remove("active");
+                i--;
+                }
+            }
+    </script>
+    
+</body>
+</html>
